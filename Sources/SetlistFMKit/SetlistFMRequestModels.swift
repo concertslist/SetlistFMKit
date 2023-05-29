@@ -75,6 +75,7 @@ struct SearchArtistsModel: SetlistFMRequestModel {
     var queryParameters: [String : String]? {
         return [
             "artistMbid": artistMbid,
+            "artistName": artistName,
             "artistTmid": artistTmid,
             "p": "\(p)",
             "sort": sort
