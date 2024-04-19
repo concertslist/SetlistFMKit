@@ -7,7 +7,7 @@
 //
 
 /// The response model for a Setlist.fm API request containing multiple setlists
-public struct FMSetlistsResult: Decodable, Equatable {
+public struct FMSetlistsResult: Decodable, Equatable, Sendable {
     /// Result list of setlists
     public let setlist: [FMSetlist]?
     
@@ -22,7 +22,7 @@ public struct FMSetlistsResult: Decodable, Equatable {
 }
 
 /// The model for a Setlist object from the Setlist.fm API
-public struct FMSetlist: Decodable, Equatable {
+public struct FMSetlist: Decodable, Equatable, Sendable {
     /// The setlist's artist
     public let artist: FMArtist?
     
@@ -59,13 +59,13 @@ public struct FMSetlist: Decodable, Equatable {
 }
 
 /// The model for the upper-level `sets` JSON object, which just holds an array of `FMSet`
-public struct FMSets: Decodable, Equatable {
+public struct FMSets: Decodable, Equatable, Sendable {
     /// The list of sets
     public let set: [FMSet]?
 }
 
 /// The response model for a Setlist.fm API request containing multiple artists
-public struct FMArtistsResult: Decodable, Equatable {
+public struct FMArtistsResult: Decodable, Equatable, Sendable {
     // Result list of artists
     public let artist: [FMArtist]?
     
@@ -80,7 +80,7 @@ public struct FMArtistsResult: Decodable, Equatable {
 }
 
 /// The model for an Artist object from the Setlist.fm API
-public struct FMArtist: Decodable, Equatable {
+public struct FMArtist: Decodable, Equatable, Sendable {
     /// Unique Musicbrainz Identifier (MBID), e.g. "b10bbbfc-cf9e-42e0-be17-e2c3e1d2600d"
     public let mbid: String?
     
@@ -101,7 +101,7 @@ public struct FMArtist: Decodable, Equatable {
 }
 
 /// The model for a Country object from the Setlist.fm API
-public struct FMCountriesResult: Decodable, Equatable {
+public struct FMCountriesResult: Decodable, Equatable, Sendable {
     /// Result list of countries
     public let country: [FMCountry]?
     
@@ -116,7 +116,7 @@ public struct FMCountriesResult: Decodable, Equatable {
 }
 
 /// The model for a Country object from the Setlist.fm API
-public struct FMCountry: Decodable, Equatable {
+public struct FMCountry: Decodable, Equatable, Sendable {
     /// The country's [ISO code](http://www.iso.org/iso/english_country_names_and_code_elements). E.g. "ie" for Ireland
     public let code: String?
     
@@ -126,7 +126,7 @@ public struct FMCountry: Decodable, Equatable {
 }
 
 /// The model for a Coords object from the Setlist.fm API
-public struct FMCoords: Decodable, Equatable {
+public struct FMCoords: Decodable, Equatable, Sendable {
     /// The latitude part of the coordinates
     public let lat: Double?
     
@@ -135,7 +135,7 @@ public struct FMCoords: Decodable, Equatable {
 }
 
 /// The model for a Setlist.fm API request containing multiple cities
-public struct FMCitiesResult: Decodable, Equatable {
+public struct FMCitiesResult: Decodable, Equatable, Sendable {
     /// Result list of cities
     public let cities: [FMCity]?
     
@@ -150,7 +150,7 @@ public struct FMCitiesResult: Decodable, Equatable {
 }
 
 /// The model for a City object from the Setlist.fm API
-public struct FMCity: Decodable, Equatable {
+public struct FMCity: Decodable, Equatable, Sendable {
     /// Unique identifier.
     public let id: String?
     
@@ -184,7 +184,7 @@ public struct FMCity: Decodable, Equatable {
 }
 
 /// The response model for a Setlist.fm API request containing multiple venues
-public struct FMVenuesResult: Decodable, Equatable {
+public struct FMVenuesResult: Decodable, Equatable, Sendable {
     // Result list of venue
     public let venue: [FMVenue]?
     
@@ -199,7 +199,7 @@ public struct FMVenuesResult: Decodable, Equatable {
 }
 
 /// The model for a Venue object from the Setlist.fm API
-public struct FMVenue: Decodable, Equatable {
+public struct FMVenue: Decodable, Equatable, Sendable {
     /// The city in which the venue is located
     public let city: FMCity?
     
@@ -214,13 +214,13 @@ public struct FMVenue: Decodable, Equatable {
 }
 
 /// The model for a Tour object from the Setlist.fm API
-public struct FMTour: Decodable, Equatable {
+public struct FMTour: Decodable, Equatable, Sendable {
     /// The name of the tour.
     public let name: String?
 }
 
 /// The model for a Song object from the Setlist.fm API
-public struct FMSong: Decodable, Equatable {
+public struct FMSong: Decodable, Equatable, Sendable {
     /// The name of the song. E.g. Yesterday or "Wish You Were Here"
     public let name: String?
     
@@ -240,7 +240,7 @@ public struct FMSong: Decodable, Equatable {
 }
 
 /// The model for a Set object from the Setlist.fm API
-public struct FMSet: Decodable, Equatable {
+public struct FMSet: Decodable, Equatable, Sendable {
     /// The description/name of the set. E.g. "Acoustic set" or "Paul McCartney solo"
     public let name: String?
     
@@ -253,7 +253,7 @@ public struct FMSet: Decodable, Equatable {
 }
 
 /// The model for a User object from the Setlist.fm API
-public struct FMUser: Decodable, Equatable {
+public struct FMUser: Decodable, Equatable, Sendable {
     /// Unqiue identifier
     public let userId: String?
     
